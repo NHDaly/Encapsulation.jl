@@ -16,6 +16,10 @@ Accesses must use the `@get` and `@set` macros, and will only succeed from insid
     @get(xm.x)
 ```
 
+
+
+(NOTE: `@get` and `@set` have to be implemented as macros in order to get access to the calling module. 😢)
+
 ---------
 
 ## Ideas to explore
