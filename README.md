@@ -15,3 +15,14 @@ Accesses must use the `@get` and `@set` macros, and will only succeed from insid
 ```julia
     @get(xm.x)
 ```
+
+---------
+
+## Ideas to explore
+
+We could also support a "friending" notion, where you can also share access with other modules that you expect to be able to access it. Maybe supporting something like some of these options:
+```julia
+    @private x::Int                      # only accessible from @__MODULE__
+    @private(..SisterModule, y::Int)     # accessible from @__MODULE__ and SisterModule
+    @private(:(AnotherPkg.SubMod) z::Int   # accessible from @__MODULE__ and AnotherPkg.SubMod, even if AnotherPkg isn't loaded yet
+```
